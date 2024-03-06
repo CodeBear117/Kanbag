@@ -1,0 +1,5 @@
+Changes from the default kanban board:
+
+1. have 3 named columns showing by default on application start (To Do List, Unpacked, Packed) [done]
+2. have at a sample taskcard by default in a default column [done]
+3. develop ability to set priority visualisation on a taskcard 
