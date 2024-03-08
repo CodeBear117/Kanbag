@@ -1,4 +1,3 @@
-import AssistantIcon from "../icons/AssistantIcon";
 import AssistantArea from "./AssistantArea";
 import React, { useState } from "react";
 
@@ -133,62 +132,7 @@ const WelcomeContainer = () => {
         "
         />
       </div>
-
-      <div
-        className="
-        flex 
-        justify-between 
-        items-center 
-        bg-opacity-10
-      bg-rose-500
-        px-3
-        py-2
-        mt-3
-      "
-      >
-        <div
-          className="
-      text-xs
-      rounded-md 
-      flex
-      gap-2
-      items-center
-      "
-        >
-          <AssistantIcon />
-          AI Suggestions
-        </div>
-        <button
-          type="submit"
-          className="
-        text-xs 
-        bg-rose-500 
-        hover:bg-rose-700 
-        hover:bg-opacity-90
-        p-2 
-        rounded-md
-        "
-        >
-          Refresh
-        </button>
-      </div>
-
-      <div
-        className="
-       flex-grow
-       text-xs
-       rounded-md
-       p-3
-       font-bold
-       bg-rose-500
-       bg-opacity-10
-       text-rose-500
-       overflow-auto
-     "
-        style={{
-          minHeight: "calc(20px)" /* Adjust for margin requirements */,
-        }}
-      >
+      <div>
         <AssistantArea
           destination={destination}
           departureDate={departureDate}

@@ -13,9 +13,11 @@ Kanbag is an app to help people plan their packing for a holiday or trip. The ap
 
 ### Technologies
 
-- JS / TS
+- TS / JS
 - React + Vite
 - Tailwind CSS
+- Node (Express) Backend
 
 ### See it live
+
 https://kanbag.netlify.app/

@@ -2,4 +2,8 @@ Changes from the default kanban board:
 
 1. have 3 named columns showing by default on application start (To Do List, Unpacked, Packed) [done]
 2. have at a sample taskcard by default in a default column [done]
-3. develop ability to set priority visualisation on a taskcard 
+3. develop ability to set priority visualisation on a taskcard
+
+GPT Integration - ChatGPT will suggest things to pack based on inputted trip details. The outputted suggestions will be presented to the user in the form of TaskCards that user can drag into relevant columns or delete (in which case a new suggestion will replace it)
+
+1. send information from inputs on WelcomeContainer component to AssistantArea component in the form of a prompt string
