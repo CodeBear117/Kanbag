@@ -136,20 +136,41 @@ const WelcomeContainer = () => {
 
       <div
         className="
+        flex 
+        justify-between 
+        items-center 
+        bg-opacity-10
+      bg-rose-500
+        px-3
+        py-2
+        mt-3
+      "
+      >
+        <div
+          className="
       text-xs
       rounded-md 
-      px-3
-      py-2
-      bg-opacity-10
-      bg-rose-500
       flex
-      mt-3
       gap-2
       items-center
       "
-      >
-        <AssistantIcon />
-        AI Suggestions
+        >
+          <AssistantIcon />
+          AI Suggestions
+        </div>
+        <button
+          type="submit"
+          className="
+        text-xs 
+        bg-rose-500 
+        hover:bg-rose-700 
+        hover:bg-opacity-90
+        p-2 
+        rounded-md
+        "
+        >
+          Refresh
+        </button>
       </div>
 
       <div
