@@ -10,7 +10,7 @@ import dotenv from "dotenv";
 import { OpenAI } from "openai";
 import cors from "cors";
 
-// create new backend instance with express listening on port 3001
+// create new backend instance
 const app = express();
 const port = 3001;
 
@@ -21,6 +21,7 @@ const openai = new OpenAI(process.env.OPENAI_API_KEY);
 
 app.use(express.json());
 
+// implement CORS Policy
 app.use(cors());
 
 // test with simple get req
@@ -32,6 +33,7 @@ app.get("/", (req, res) => {
 app.post("/", async (req, res) => {
   const prompt = req.body.prompt;
   try {
+    // OpenAI Completions
     const completion = await openai.chat.completions.create({
       messages: [{ role: "system", content: prompt }],
       model: "gpt-3.5-turbo",

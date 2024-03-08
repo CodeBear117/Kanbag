@@ -9,7 +9,8 @@ const ChatGPT = () => {
     e.preventDefault();
 
     try {
-      const result = await axios.post("http://localhost:3001/", {
+      // deployed with Render
+      const result = await axios.post("https://kanbag.onrender.com", {
         prompt: input,
       });
       setResponse(result.data);
