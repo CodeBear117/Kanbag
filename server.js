@@ -21,8 +21,13 @@ const openai = new OpenAI(process.env.OPENAI_API_KEY);
 
 app.use(express.json());
 
-// implement CORS Policy
-app.use(cors());
+// Implement CORS Policy specifically frontend domain
+const corsOptions = {
+  origin: "https://kanbag.netlify.app", // Frontend domain
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions));
 
 // test with simple get req
 app.get("/", (req, res) => {

@@ -29,7 +29,7 @@ const TaskCard = ({ task, deleteTask, updateTask }: Props) => {
     transition,
     isDragging,
   } = useSortable({
-    id: task.id, // set the id proerty to the task id
+    id: task.id, // set the id property to the task id
     data: {
       type: "Task", // set the data property to Task and the task state
       task,

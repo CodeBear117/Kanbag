@@ -1,13 +1,16 @@
+// import dependencies
 import AssistantIcon from "../icons/AssistantIcon";
 import { useState } from "react";
 import axios from "axios";
 
+// set types for props
 interface Props {
   destination: string;
   departureDate: string;
   daysOfTravel: string;
 }
 
+// extract props
 const AssistantArea: React.FC<Props> = ({
   destination,
   departureDate,
@@ -22,15 +25,12 @@ const AssistantArea: React.FC<Props> = ({
     e.preventDefault();
 
     try {
-      // post req to local backend
-      const result = await axios.post("http://localhost:3001", {
-        // configure prompt
-        prompt: `I am going to ${destination} on ${departureDate} for ${daysOfTravel}. Suggest some things i might need to pack specific to this destination, time of year and duration.`,
-      });
       // post req to Render deployment
-      //const result = await axios.post("https://kanbag.onrender.com", {
-      //prompt: `I am going to ${destination} on ${departureDate} for ${daysOfTravel}. Suggest some things i might need to pack specific to this destination, time of year and duration.`,
-      //});
+      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3001";
+      console.log(apiUrl);
+      const result = await axios.post(apiUrl, {
+        prompt: `I am going to ${destination} on ${departureDate} for ${daysOfTravel} days. Suggest some things I might need to pack specific to this destination, time of year and duration. The reponse must be an array of items. Each item must be no more than 4 words long.`,
+      });
 
       // set response state to returned api data
       setResponse(result.data);
