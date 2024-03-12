@@ -22,9 +22,18 @@ const openai = new OpenAI(process.env.OPENAI_API_KEY);
 app.use(express.json());
 
 // Implement CORS Policy specifically frontend domain
+const allowedOrigins = [process.env.VITE_API_URL, "http://localhost:5173"]; // Frontend domain
+console.log(allowedOrigins);
+
 const corsOptions = {
-  origin: "https://kanbag.netlify.app", // Frontend domain
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  optionsSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
