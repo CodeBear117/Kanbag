@@ -23,7 +23,7 @@ app.use(express.json());
 
 // Impliment basic CORS Policy
 const corsOptions = {
-  origin: "https://kanbag.netlify.app", // Use your Netlify domain here
+  origin: "https://kanbag.netlify.app",
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 app.use(cors(corsOptions));
