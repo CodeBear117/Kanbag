@@ -26,8 +26,7 @@ const AssistantArea: React.FC<Props> = ({
 
     try {
       // post req to Render deployment
-      const apiUrl = import.meta.env.VITE_API_URL;
-      console.log(apiUrl);
+      const apiUrl = "https://kanbag.onrender.com";
       const result = await axios.post(apiUrl, {
         prompt: `I am going to ${destination} on ${departureDate} for ${daysOfTravel} days. Suggest some things I might need to pack specific to this destination, time of year and duration. The reponse must be an array of items. Each item must be no more than 4 words long.`,
       });

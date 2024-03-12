@@ -21,21 +21,7 @@ const openai = new OpenAI(process.env.OPENAI_API_KEY);
 
 app.use(express.json());
 
-// Implement CORS Policy specifically frontend domain
-// const allowedOrigins = [process.env.VITE_API_URL, "http://localhost:5173"]; // Frontend domain
-// console.log(allowedOrigins);
-
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error("Not allowed by CORS"));
-//     }
-//   },
-//   optionsSuccessStatus: 200,
-// };
-
+// Impliment basic CORS Policy
 app.use(cors());
 
 // test with simple get req
