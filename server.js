@@ -22,7 +22,11 @@ const openai = new OpenAI(process.env.OPENAI_API_KEY);
 app.use(express.json());
 
 // Impliment basic CORS Policy
-app.use(cors());
+const corsOptions = {
+  origin: "https://kanbag.netlify.app", // Use your Netlify domain here
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
 
 // test with simple get req
 app.get("/", (req, res) => {
